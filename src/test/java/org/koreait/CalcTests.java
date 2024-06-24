@@ -60,4 +60,10 @@ public class CalcTests {
     void t9() {
         assertThat(Calc.run("20 - 40 - 60 - 20")).isEqualTo(-100);
     }
+
+    @Test
+    @DisplayName("1 - 2 - 3 + 4 + 5 - 6 - 7 + 8 - 9 + 10 + 11 == 12")
+    void t10() {
+        assertThat(Calc.run("1 - 2 - 3 + 4 + 5 - 6 - 7 + 8 - 9 + 10 + 11")).isEqualTo(12);
+    }
 }
