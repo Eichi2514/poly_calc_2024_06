@@ -78,4 +78,36 @@ public class CalcTests {
     void t12() {
         assertThat(Calc.run("10 + 5 * 2")).isEqualTo(20);
     }
+
+    @Test
+    @DisplayName("20 + 10 + 5 * 2 == 40")
+    void t13() {
+        assertThat(Calc.run("20 + 10 + 5 * 2")).isEqualTo(40);
+    }
+
+    @Test
+    @DisplayName("10 + 10 * 10 * 10 == 1010")
+    void t14() {
+        assertThat(Calc.run("10 + 10 * 10 * 10")).isEqualTo(1010);
+    }
+
+    @Test
+    @DisplayName("10 + 20 - 3 * 4 / 6 == 28")
+    void t15() {
+        assertThat(Calc.run("10 + 20 - 3 * 4 / 6")).isEqualTo(28);
+    }
+
+    @Test
+    @DisplayName("3 * 1 + 1 - 4 * 1 - 1 - 1 == -2")
+    void t16() {
+        assertThat(Calc.run("3 * 1 + 1 - 4 * 1 - 1 - 1")).isEqualTo(-2);
+    }
+
+
+    @Test
+    @DisplayName("3 * 1 + (1 - (4 * 1 - (1 - 1))) == 0")
+    void t17() {
+        assertThat(Calc.run("3 * 1 + (1 - (4 * 1 - (1 - 1)))")).isEqualTo(0);
+    }
+
 }
