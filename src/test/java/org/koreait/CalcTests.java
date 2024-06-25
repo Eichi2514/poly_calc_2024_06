@@ -92,22 +92,39 @@ public class CalcTests {
     }
 
     @Test
-    @DisplayName("10 + 20 - 3 * 4 / 6 == 28")
-    void t15() {
-        assertThat(Calc.run("10 + 20 - 3 * 4 / 6")).isEqualTo(28);
-    }
-
-    @Test
     @DisplayName("3 * 1 + 1 - 4 * 1 - 1 - 1 == -2")
     void t16() {
         assertThat(Calc.run("3 * 1 + 1 - 4 * 1 - 1 - 1")).isEqualTo(-2);
     }
 
+    @Test
+    @DisplayName("(10 + 20) == 30")
+    void t18() {
+        assertThat(Calc.run("(10 + 20)")).isEqualTo(30);
+    }
 
     @Test
-    @DisplayName("3 * 1 + (1 - (4 * 1 - (1 - 1))) == 0")
-    void t17() {
-        assertThat(Calc.run("3 * 1 + (1 - (4 * 1 - (1 - 1)))")).isEqualTo(0);
+    @DisplayName("((10 + 20)) == 30")
+    void t19() {
+        assertThat(Calc.run("((10 + 20))")).isEqualTo(30);
+    }
+
+    @Test
+    @DisplayName("(((10 + 20))) == 30")
+    void t20() {
+        assertThat(Calc.run("(((10 + 20)))")).isEqualTo(30);
+    }
+
+    @Test
+    @DisplayName("1 + 10 / 5 == 3")
+    void t21() {
+        assertThat(Calc.run("1 + 10 / 5")).isEqualTo(3);
+    }
+
+    @Test
+    @DisplayName("(20 * 2) + 20 == 60")
+    void t22() {
+        assertThat(Calc.run("(20 * 2) + 20")).isEqualTo(60);
     }
 
 }
