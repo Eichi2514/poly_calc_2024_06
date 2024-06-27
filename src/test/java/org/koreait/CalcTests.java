@@ -163,4 +163,29 @@ public class CalcTests {
         assertThat(Calc.run("3 * 1 + (1 - (4 * 1 - (1 - 1)))")).isEqualTo(0);
     }
 
+    @Test
+    @DisplayName("3 * (1 + (1 - 4) * (1 - 1)) - 1 == 2")
+    void t29() {
+        assertThat(Calc.run("3 * (1 + (1 - 4) * (1 - 1)) - 1")).isEqualTo(2);
+    }
+
+    @Test
+    @DisplayName("10 / 5 / 2 == 1")
+    void t30() {
+        assertThat(Calc.run("10 / 5 / 2")).isEqualTo(1);
+    }
+
+    @Test
+    @DisplayName("10 * 5 / 2 == 25")
+    void t31() {
+        assertThat(Calc.run("10 * 5 / 2")).isEqualTo(25);
+    }
+
+    @Test
+    @DisplayName("10 / 4 == 2.5")
+    void t32() {
+        assertThat(Calc.run("10 / 4")).isEqualTo(2.5);
+    }
+
+
 }
